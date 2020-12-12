@@ -9,26 +9,25 @@ public class Movement : NetworkBehaviour
     private float horizontal;
     private float vertical;
     public float speed;
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     
     void Update()
     {
-      
-        RpcMove();
+        if (isLocalPlayer) {
+            Move();
+            }
     }
    
-    private void CmdMove(Vector3 pos)
-    {
-        
-    }
-    [ClientRpc]
-    private void RpcMove()
+
+  
+    private void Move()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
