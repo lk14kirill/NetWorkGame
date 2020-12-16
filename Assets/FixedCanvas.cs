@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class AttackManager : NetworkBehaviour
+public class FixedCanvas : MonoBehaviour
 {
-    [SyncVar]
-    public float health;
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -16,6 +13,6 @@ public class AttackManager : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        this.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
